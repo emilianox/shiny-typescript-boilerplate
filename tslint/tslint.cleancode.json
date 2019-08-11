@@ -1,0 +1,38 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint-clean-code"
+    ],
+    "jsRules": {},
+    "rules": {
+        "id-length": false,
+        "try-catch-first": true,
+        "max-func-args": [
+            true,
+            3
+        ],
+        "min-class-cohesion": false,
+        "newspaper-order": true,
+        "no-flag-args": true,
+        "no-for-each-push": true,
+        "no-feature-envy": [
+            true,
+            5,
+            [
+                "_",
+                "ts"
+            ]
+        ],
+        "no-map-without-usage": false,
+        "no-complex-conditionals": [
+            true,
+            2
+        ],
+        "prefer-dry-conditionals": [
+            true,
+            2
+        ],
+        "no-commented-out-code": true
+    },
+    "rulesDirectory": []
+}

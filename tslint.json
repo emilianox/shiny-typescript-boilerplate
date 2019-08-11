@@ -1,0 +1,29 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:latest",
+        "tslint-sonarts",
+        "tslint-config-airbnb",
+        "tslint-react",
+        "./tslint/tslint.cleancode.json",
+        "./tslint/tslint.inmutable.json"
+    ],
+    "jsRules": {},
+    "rules": {
+        "import-name": [
+            true,
+            {
+                "react": "React"
+            }
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-pascal-case"
+        ],
+        "jsx-no-multiline-js": false,
+        "no-null-keyword": true
+    },
+    "rulesDirectory": []
+}

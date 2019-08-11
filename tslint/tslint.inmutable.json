@@ -1,0 +1,23 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint-immutable"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-var-keyword": false,
+        "no-parameter-reassignment": false,
+        "readonly-keyword": false,
+        "readonly-array": false,
+        "no-let": false,
+        "no-object-mutation": false,
+        "no-delete": false,
+        "no-method-signature": false,
+        "no-this": false,
+        "no-class": false,
+        "no-mixed-interface": false,
+        "no-expression-statement": false,
+        "no-if-statement": false
+    },
+    "rulesDirectory": []
+}
