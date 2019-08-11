@@ -1,5 +1,6 @@
 import { Breadcrumb, Icon, Layout, Menu } from 'antd';
 import React from 'react';
+import('./Layout.scss');
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -84,10 +85,3 @@ export class SiderDemo extends React.Component {
     </span>
   )
 }
-
-// tslint:disable: no-commented-out-code
-// #components-layout-demo-side .logo {
-//   height: 32px;
-//   background: rgba(255, 255, 255, 0.2);
-//   margin: 16px;
-// }

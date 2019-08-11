@@ -8,13 +8,14 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "target": "es2015",
-    "module": "es2015",
+    "target": "esNext",
+    "module": "esNext",
     "strict": true,
     "jsx": "react"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "global.d.ts"
   ],
   "exclude": [
     "node_modules",

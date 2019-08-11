@@ -13,7 +13,7 @@ module.exports = {
   // custom
   optimization: {
     minimizer: [new TerserJSPlugin({
-      parallel:true
+      parallel: true
     }), new OptimizeCSSAssetsPlugin({})],
     runtimeChunk: 'single',
     moduleIds: 'hashed',
@@ -22,8 +22,8 @@ module.exports = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks:function(chunk){
-            return chunk.name !== 'antd-icons'; 
+          chunks: function (chunk) {
+            return chunk.name !== 'antd-icons';
           },
         }
       }
@@ -63,17 +63,31 @@ module.exports = {
         ],
       },
       {
-        loader:'webpack-ant-icon-loader',
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader',
+          // 'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        loader: 'webpack-ant-icon-loader',
         enforce: 'pre',
-        options:{
-          chunkName:'antd-icons'
+        options: {
+          chunkName: 'antd-icons'
         },
-        include:[
+        include: [
           require.resolve('@ant-design/icons/lib/dist')
         ]
       }
     ],
-    
+
   },
 
   plugins: [
@@ -81,7 +95,7 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new MomentLocalesPlugin({
-      localesToKeep: [] 
+      localesToKeep: []
     }),
     // ...(process.env.NODE_ENV === 'development' ? 
     //     [] : [
