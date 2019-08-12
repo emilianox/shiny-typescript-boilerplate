@@ -1,11 +1,11 @@
 import { Breadcrumb, Icon, Layout, Menu } from 'antd';
 import React from 'react';
-import('./Layout.scss');
+import('./index.scss');
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-export class SiderDemo extends React.Component {
+export class AppLayout extends React.Component {
   public state = {
     collapsed: false,
   };

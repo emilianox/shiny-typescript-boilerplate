@@ -1,6 +1,10 @@
 import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import React from 'react';
 
+declare type EventType =
+  React.KeyboardEvent<HTMLDivElement> |
+  React.MouseEvent<HTMLDivElement | HTMLButtonElement>;
+
 const pStyle = {
   color: 'rgba(0,0,0,0.85)',
   display: 'block',
@@ -12,6 +16,11 @@ const pStyle = {
 interface IDescriptionItemProps {
   title: string;
   content: string | React.ReactChild;
+}
+
+interface IItemDataSource {
+  id: string | number;
+  name: React.ReactNode;
 }
 
 const DescriptionItem = ({ title, content }: IDescriptionItemProps) => (
@@ -36,7 +45,12 @@ const DescriptionItem = ({ title, content }: IDescriptionItemProps) => (
   </div>
 );
 
-export class Preview extends React.Component {
+export interface IPreviewProps {
+  dataSource: IItemDataSource[];
+  onClose?: (e: EventType) => void;
+}
+
+export class Preview extends React.Component<IPreviewProps> {
   public state = { visible: false };
 
   public showDrawer = () => {
@@ -45,30 +59,13 @@ export class Preview extends React.Component {
     });
   }
 
-  public onClose = () => {
+  public onClose = (e: EventType) => {
     this.setState({
       visible: false,
-    });
+    }, () => this.props.onClose && this.props.onClose(e));
   }
 
   public render() {
-
-    interface IItemDataSource {
-      id?: string | number;
-      name: React.ReactNode;
-    }
-
-    const dataSource = [
-      {
-        id: 'lili',
-        name: 'Lily',
-      },
-      {
-        id: 'lili',
-        name: 'Lily',
-      },
-    ];
-
     const renderItem = (item: IItemDataSource) => (
       <List.Item
         key={item.id}
@@ -91,7 +88,7 @@ export class Preview extends React.Component {
     return (
       <div>
         <List
-          dataSource={dataSource}
+          dataSource={this.props.dataSource}
           bordered={true}
           renderItem={renderItem}
         />

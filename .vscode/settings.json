@@ -1,4 +1,4 @@
 {
     "god.tsconfig": "./tsconfig.json",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
 }

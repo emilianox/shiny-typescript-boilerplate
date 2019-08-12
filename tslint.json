@@ -23,7 +23,9 @@
             "allow-pascal-case"
         ],
         "jsx-no-multiline-js": false,
-        "no-null-keyword": true
+        "no-null-keyword": true,
+        "object-literal-sort-keys": false,
+        "align": false
     },
     "rulesDirectory": []
 }
