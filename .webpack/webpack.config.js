@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+
 
 const path = require('path');
 const SRC_PATH = path.resolve(__dirname, '../src');
@@ -107,6 +109,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({ inject: true, template: path.join(SRC_PATH, 'index.html') }),
+    new FixStyleOnlyEntriesPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
