@@ -1,4 +1,9 @@
 {
-    "god.tsconfig": "./tsconfig.json",
     "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true
+    },
+    "files.associations": {
+        "tslint.json": "jsonc"
+    },
 }

@@ -68,6 +68,7 @@
     "rimraf": "^2.6.3",
     "sass-loader": "^7.2.0",
     "tslint": "^5.18.0",
+    "tslint-clean-code": "^0.2.9",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-immutable": "^6.0.1",
     "tslint-react": "^4.0.0",
@@ -88,8 +89,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "tslint-clean-code": "^0.2.9"
+    "react-dom": "16.8.6"
   },
   "typeCoverage": {
     "atLeast": 99

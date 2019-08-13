@@ -2,7 +2,6 @@ import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import React from 'react';
 import BiazfanxmamNRoxxVxkaPng from '../images/BiazfanxmamNRoxxVxka.png';
 
-
 declare type EventType =
   React.KeyboardEvent<HTMLDivElement> |
   React.MouseEvent<HTMLDivElement | HTMLButtonElement>;

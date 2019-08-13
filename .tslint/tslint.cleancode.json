@@ -6,17 +6,17 @@
     "jsRules": {},
     "rules": {
         "id-length": false,
-        "try-catch-first": true,
+        "try-catch-first": false,
         "max-func-args": [
-            true,
+            false,
             3
         ],
         "min-class-cohesion": false,
-        "newspaper-order": true,
-        "no-flag-args": true,
-        "no-for-each-push": true,
+        "newspaper-order": false,
+        "no-flag-args": false,
+        "no-for-each-push": false,
         "no-feature-envy": [
-            true,
+            false,
             5,
             [
                 "_",
@@ -25,14 +25,14 @@
         ],
         "no-map-without-usage": false,
         "no-complex-conditionals": [
-            true,
+            false,
             2
         ],
         "prefer-dry-conditionals": [
-            true,
+            false,
             2
         ],
-        "no-commented-out-code": true
+        "no-commented-out-code": false
     },
     "rulesDirectory": []
 }
