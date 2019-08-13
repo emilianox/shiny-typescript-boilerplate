@@ -5,8 +5,8 @@
         "tslint-sonarts",
         "tslint-config-airbnb",
         "tslint-react",
-        "./tslint/tslint.cleancode.json",
-        "./tslint/tslint.inmutable.json"
+        "./.tslint/tslint.cleancode.json",
+        "./.tslint/tslint.inmutable.json"
     ],
     "jsRules": {},
     "rules": {

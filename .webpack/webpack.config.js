@@ -7,7 +7,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
-const APP_PATH = path.resolve(__dirname, 'src');
+const SRC_PATH = path.resolve(__dirname, '../src');
+const DIST_PATH = path.resolve(__dirname, '../dist');
 
 module.exports = {
   // custom
@@ -31,12 +32,12 @@ module.exports = {
   },
   // endcustom
 
-  entry: APP_PATH,
+  entry: SRC_PATH,
 
 
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: DIST_PATH,
   },
 
   resolve: {
@@ -45,9 +46,13 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.(ts|js)x?$/, loader: 'babel-loader', exclude: /node_modules/ },
       {
-        test: /\.(le|c)ss$/,
+        test: /\.(ts|js)x?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -77,6 +82,16 @@ module.exports = {
         ],
       },
       {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8000, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }]
+      },
+      {
         loader: 'webpack-ant-icon-loader',
         enforce: 'pre',
         options: {
@@ -91,15 +106,20 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ inject: true, template: path.join(APP_PATH, 'index.html') }),
+    new HtmlWebpackPlugin({ inject: true, template: path.join(SRC_PATH, 'index.html') }),
     new ForkTsCheckerWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new MomentLocalesPlugin({
       localesToKeep: []
     }),
-    // ...(process.env.NODE_ENV === 'development' ? 
+    // ...(process.env.NODE_ENV === 'development' ?
     //     [] : [
-    //             
+    //
     //     ]
     // )
   ]

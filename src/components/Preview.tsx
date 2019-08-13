@@ -1,5 +1,7 @@
 import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import React from 'react';
+import BiazfanxmamNRoxxVxkaPng from '../images/BiazfanxmamNRoxxVxka.png';
+
 
 declare type EventType =
   React.KeyboardEvent<HTMLDivElement> |
@@ -77,7 +79,7 @@ export class Preview extends React.Component<IPreviewProps> {
       >
         <List.Item.Meta
           avatar={
-            <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
+            <Avatar src={BiazfanxmamNRoxxVxkaPng} />
           }
           title={<a href="https://ant.design/index-cn">{item.name}</a>}
           description="Progresser AFX"

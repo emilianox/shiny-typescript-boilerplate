@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const common = require('../webpack.config.js');
+const common = require('./webpack.config.js');
 
 
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -14,21 +14,21 @@ const webpackConfig = merge.smart(common, {
 
 });
 
-webpackConfig.optimization.minimizer =  
+webpackConfig.optimization.minimizer =
   Object.values(merge(common.optimization.minimizer,
     [
-          new TerserJSPlugin({
-            sourceMap: true
-          }),
-          new OptimizeCSSAssetsPlugin({
-            cssProcessorOptions: {
-              map: {
-                inline: false
-              }
-            }
-          })
-        ]
-  )).map((val)=> val)
+      new TerserJSPlugin({
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          map: {
+            inline: false
+          }
+        }
+      })
+    ]
+  )).map((val) => val)
 // console.log('webpack config-----', webpackConfig);
 
 
