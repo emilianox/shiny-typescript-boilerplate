@@ -1,10 +1,26 @@
+import { Link, RouteComponentProps, Router } from '@reach/router';
 import lodash from 'lodash';
 import moment from 'moment';
 import React from 'react';
-import { Counter } from './Counter';
+import Counter from './Counter';
 import { Hello } from './Hello';
 import { AppLayout } from './Layout';
-import { Preview } from './Preview';
+
+function createLazyRoute<T extends RouteComponentProps>(
+  RouteComponent: React.ComponentType<T>,
+) {
+  return (props: T) => {
+    return (
+      <React.Suspense fallback={<div>loading...</div>}>
+        <RouteComponent {...props} />
+      </React.Suspense>
+    );
+  };
+}
+
+const AsyncPreviewRoute = createLazyRoute(
+  React.lazy(() => import('./Preview')),
+);
 
 const dataSource = [
   {
@@ -18,22 +34,30 @@ const dataSource = [
 ];
 
 export const App = () => (
-  <>
-    <AppLayout>
-      <Hello name={'Status Page'} />
-      <div>React Example :</div>
-      <Counter />
-      <br />
-      <br />
-      <div>Antd Example :</div>
-      <Preview dataSource={dataSource} />
-      <br />
-      <br />
-      <div>Moment Example : {moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
-      <br />
-      <br />
-      <div>Lodash Example : {lodash.reduce([1, 2, 3], (prev, curr) => prev + curr, 0)}</div>
-    </AppLayout>
+  <AppLayout>
+    <Hello name={'Status Page'} />
+    <div>React Example :</div>
+    <br />
+    <br />
+    <nav>
+      <Link to="/">Home</Link>{' '}
+      <Link to="preview">Dashboard</Link>
+    </nav>
+    <Router>
+      <Counter path="/" />
+      <AsyncPreviewRoute dataSource={dataSource} path="/preview" />
+    </Router>
 
-  </>
+    <br />
+    <br />
+    <div>Antd Example :</div>
+
+    <br />
+    <br />
+    <div>Moment Example : {moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
+    <br />
+    <br />
+    <div>Lodash Example : {lodash.reduce([1, 2, 3], (prev, curr) => prev + curr, 0)}</div>
+  </AppLayout>
+
 );

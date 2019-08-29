@@ -1,6 +1,7 @@
 import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import React from 'react';
 import BiazfanxmamNRoxxVxkaPng from '../images/BiazfanxmamNRoxxVxka.png';
+import { RouteComponentProps } from '@reach/router';
 
 declare type EventType =
   React.KeyboardEvent<HTMLDivElement> |
@@ -51,7 +52,7 @@ export interface IPreviewProps {
   onClose?: (e: EventType) => void;
 }
 
-export class Preview extends React.Component<IPreviewProps> {
+export class Preview extends React.Component<IPreviewProps & RouteComponentProps> {
   public state = { visible: false };
 
   public showDrawer = () => {
@@ -188,3 +189,5 @@ export class Preview extends React.Component<IPreviewProps> {
     );
   }
 }
+
+export default Preview;

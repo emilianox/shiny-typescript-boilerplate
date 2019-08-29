@@ -107,6 +107,11 @@ module.exports = {
 
   },
 
+  devServer: {
+    publicPath: '/',
+    historyApiFallback: true
+  },
+
   plugins: [
     new HtmlWebpackPlugin({ inject: true, template: path.join(SRC_PATH, 'index.html') }),
     new FixStyleOnlyEntriesPlugin(),

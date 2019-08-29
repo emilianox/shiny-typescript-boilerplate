@@ -1,10 +1,11 @@
+import { RouteComponentProps } from '@reach/router';
 import React, { Component } from 'react';
 
 export interface ICounterState {
   value: number;
 }
 
-export class Counter extends Component<{}, ICounterState> {
+export class Counter extends Component<RouteComponentProps, ICounterState> {
   public readonly state: ICounterState = { value: 0 };
 
   public render() {
@@ -20,3 +21,5 @@ export class Counter extends Component<{}, ICounterState> {
   private handleIncrement = () => this.setState({ value: this.state.value + 1 });
   private handleDecrement = () => this.setState({ value: this.state.value - 1 });
 }
+
+export default Counter;
