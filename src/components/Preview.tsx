@@ -1,7 +1,7 @@
+import { RouteComponentProps } from '@reach/router';
 import { Avatar, Col, Divider, Drawer, List, Row } from 'antd';
 import React from 'react';
 import BiazfanxmamNRoxxVxkaPng from '../images/BiazfanxmamNRoxxVxka.png';
-import { RouteComponentProps } from '@reach/router';
 
 declare type EventType =
   React.KeyboardEvent<HTMLDivElement> |
@@ -89,6 +89,9 @@ export class Preview extends React.Component<IPreviewProps & RouteComponentProps
 
     return (
       <div>
+        <div>Antd Example :</div>
+        <br />
+        <br />
         <List
           dataSource={this.props.dataSource}
           bordered={true}

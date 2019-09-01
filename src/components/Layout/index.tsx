@@ -1,3 +1,4 @@
+import { Link, navigate } from '@reach/router';
 import { Breadcrumb, Icon, Layout, Menu } from 'antd';
 import React from 'react';
 import('./index.scss');
@@ -14,30 +15,30 @@ export class AppLayout extends React.Component {
   public readonly onCollapse = (collapsed: boolean) => {
     this.setState({ collapsed });
   }
+
   public readonly MenuCustom = () => (
     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-      <Menu.Item key="1">
-        <Icon type="pie-chart" />
-        <span>Option 1</span>
+      <Menu.Item key="1" onClick={this.navigateHome}>
+        <Icon type="home" />
+        <span>Home</span>
       </Menu.Item>
-      <Menu.Item key="2">
-        <Icon type="desktop" />
-        <span>Option 2</span>
-      </Menu.Item>
+
       <SubMenu
         key="sub1"
-        title={this.user()}
+        title={
+          <span>
+            <Icon type="book" />
+            <span>Pages</span>
+          </span>
+
+        }
       >
-        <Menu.Item key="3">Tom</Menu.Item>
-        <Menu.Item key="4">Bill</Menu.Item>
-        <Menu.Item key="5">Alex</Menu.Item>
-      </SubMenu>
-      <SubMenu
-        key="sub2"
-        title={this.team()}
-      >
-        <Menu.Item key="6">Team 1</Menu.Item>
-        <Menu.Item key="8">Team 2</Menu.Item>
+        <Menu.Item key="3">
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item key="4">
+          <Link to="preview">Dashboard</Link>
+        </Menu.Item>
       </SubMenu>
       <Menu.Item key="9">
         <Icon type="file" />
@@ -70,18 +71,12 @@ export class AppLayout extends React.Component {
       </Layout>
     );
   }
+  private readonly navigateHome = () => navigate('/');
 
   private readonly team = () => (
     <span>
       <Icon type="team" />
       <span>Team</span>
-    </span>
-  )
-
-  private readonly user = () => (
-    <span>
-      <Icon type="user" />
-      <span>User</span>
     </span>
   )
 }
