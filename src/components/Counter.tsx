@@ -1,25 +1,29 @@
 import { RouteComponentProps } from '@reach/router';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { createContainer } from 'unstated-next';
 
 export interface ICounterState {
   value: number;
 }
 
-export class Counter extends Component<RouteComponentProps, ICounterState> {
-  public readonly state: ICounterState = { value: 0 };
-
-  public render() {
-    return (
-      <>
-        <div>{this.state.value}</div>
-        <button onClick={this.handleIncrement}>+</button>
-        <button onClick={this.handleDecrement}>-</button>
-      </>
-    );
-  }
-
-  private handleIncrement = () => this.setState({ value: this.state.value + 1 });
-  private handleDecrement = () => this.setState({ value: this.state.value - 1 });
+function useCounter(initialState = 0) {
+  const [count, setCount] = useState(initialState);
+  const decrement = () => setCount(count - 1);
+  const increment = () => setCount(count + 1);
+  return { count, decrement, increment };
 }
+
+export const CounterStateContainer = createContainer(useCounter);
+
+export const Counter: React.FunctionComponent<RouteComponentProps> = () => {
+  const counter = CounterStateContainer.useContainer();
+  return (
+    <div>
+      <button onClick={counter.decrement}>-</button>
+      <span>{counter.count}</span>
+      <button onClick={counter.increment}>+</button>
+    </div>
+  );
+};
 
 export default Counter;

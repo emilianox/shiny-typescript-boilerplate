@@ -2,7 +2,7 @@ import { Link, RouteComponentProps, Router } from '@reach/router';
 import lodash from 'lodash';
 import moment from 'moment';
 import React from 'react';
-import Counter from './Counter';
+import Counter, { CounterStateContainer } from './Counter';
 import { Hello } from './Hello';
 import { AppLayout } from './Layout';
 
@@ -39,21 +39,13 @@ export const App = () => (
     <div>React Example :</div>
     <br />
     <br />
-    <nav>
-      <Link to="/">Home</Link>{' '}
-      <Link to="preview">Dashboard</Link>
-    </nav>
-    <Router>
-      <Counter path="/" />
-      <AsyncPreviewRoute dataSource={dataSource} path="/preview" />
-    </Router>
+    <CounterStateContainer.Provider>
+      <Router>
+        <Counter path="/" />
+        <AsyncPreviewRoute dataSource={dataSource} path="/preview" />
+      </Router>
+    </CounterStateContainer.Provider>
 
-    <br />
-    <br />
-    <div>Antd Example :</div>
-
-    <br />
-    <br />
     <div>Moment Example : {moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
     <br />
     <br />

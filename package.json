@@ -91,7 +91,8 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "unstated-next": "^1.1.0"
   },
   "typeCoverage": {
     "atLeast": 99
