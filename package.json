@@ -1,7 +1,7 @@
 {
   "name": "ts-base",
   "version": "1.0.0",
-  "description": "",
+  "description": "A very opinionated React/Typescript Base Web Project.",
   "scripts": {
     "analize-build": "npm run clean && webpack --progress --colors --mode=production --config .webpack/webpack.prod.analize.js",
     "build": "npm run clean && webpack --progress --colors --mode=production --config .webpack/webpack.config.js",
@@ -88,6 +88,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "antd": "^3.21.4",
+    "dayjs": "^1.8.16",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "react": "16.8.6",

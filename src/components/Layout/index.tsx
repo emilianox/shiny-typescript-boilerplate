@@ -16,6 +16,8 @@ export class AppLayout extends React.Component {
     this.setState({ collapsed });
   }
 
+  public readonly navigateHome = () => navigate('/');
+
   public readonly MenuCustom = () => (
     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
       <Menu.Item key="1" onClick={this.navigateHome}>
@@ -71,12 +73,4 @@ export class AppLayout extends React.Component {
       </Layout>
     );
   }
-  private readonly navigateHome = () => navigate('/');
-
-  private readonly team = () => (
-    <span>
-      <Icon type="team" />
-      <span>Team</span>
-    </span>
-  )
 }

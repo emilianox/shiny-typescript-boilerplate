@@ -1,4 +1,5 @@
-import { Link, RouteComponentProps, Router } from '@reach/router';
+import { RouteComponentProps, Router } from '@reach/router';
+import dayjs from 'dayjs';
 import lodash from 'lodash';
 import moment from 'moment';
 import React from 'react';
@@ -48,6 +49,7 @@ export const App = () => (
 
     <div>Moment Example : {moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
     <br />
+    <div>DayJs Example : {dayjs().format('MMMM D YYYY, h:mm:ss a')}</div>
     <br />
     <div>Lodash Example : {lodash.reduce([1, 2, 3], (prev, curr) => prev + curr, 0)}</div>
   </AppLayout>
