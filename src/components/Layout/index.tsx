@@ -39,12 +39,19 @@ export class AppLayout extends React.Component {
           <Link to="/">Home</Link>
         </Menu.Item>
         <Menu.Item key="4">
-          <Link to="preview">Dashboard</Link>
+          <Link to="preview">Preview</Link>
+        </Menu.Item>
+        <Menu.Item key="5">
+          <Link to="form">Formik</Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="9">
         <Icon type="file" />
         <span>File</span>
+      </Menu.Item>
+      <Menu.Item key="10">
+        <Icon type="file" />
+        <span><Link to="got">Got</Link> </span>
       </Menu.Item>
     </Menu>
 
@@ -61,14 +68,14 @@ export class AppLayout extends React.Component {
           <Header style={{ background: '#fff', padding: 0 }} />
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+              <Breadcrumb.Item>Test</Breadcrumb.Item>
+              <Breadcrumb.Item>Breadcrumb</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               {this.props.children}
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>Ant Design Base Template</Footer>
         </Layout>
       </Layout>
     );
