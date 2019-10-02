@@ -14,12 +14,12 @@ Main Features
 
 Key Techs
 > 
- <img src="./readme/typescript.png"> [TypeScript](https://www.typescriptlang.org/) ([babel compilation](https://babeljs.io/docs/en/babel-preset-typescript)) 
- <img src="./readme/react.png"> [React](https://reactjs.org/) (with [hooks](https://reactjs.org/docs/hooks-intro.html))
- <img src="./readme/webpack.png">  [Webpack](https://webpack.js.org/)
- <img src="./readme/antd.png"> [Ant Design](https://ant.design)
- <img src="./readme/storybook.png"> [Storybook](https://storybook.js.org/)
- <img src="./readme/sass.png"> [Sass](https://sass-lang.com/)
+ - <img src="./readme/typescript.png"> [TypeScript](https://www.typescriptlang.org/) ([babel compilation](https://babeljs.io/docs/en/babel-preset-typescript)) 
+ - <img src="./readme/react.png"> [React](https://reactjs.org/) (with [hooks](https://reactjs.org/docs/hooks-intro.html))
+ - <img src="./readme/webpack.png">  [Webpack](https://webpack.js.org/)
+ - <img src="./readme/antd.png"> [Ant Design](https://ant.design)
+ - <img src="./readme/storybook.png"> [Storybook](https://storybook.js.org/)
+ - <img src="./readme/sass.png"> [Sass](https://sass-lang.com/)
  
  Another libraries installed
 > 
