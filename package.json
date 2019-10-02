@@ -84,7 +84,8 @@
     "webpack-cli": "3.3.6",
     "webpack-dev-server": "3.7.2",
     "webpack-fix-style-only-entries": "^0.3.0",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "ts-toolbelt": "^4.7.19"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -93,10 +94,9 @@
     "formik": "^1.5.8",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "react": "16.8.6",
+    "react": "16.10",
     "react-dom": "16.8.6",
     "rest-hooks": "^2.1.5",
-    "ts-toolbelt": "^4.7.19",
     "unstated-next": "^1.1.0"
   },
   "typeCoverage": {
