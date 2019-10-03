@@ -2,6 +2,9 @@
 # Shiny Typescript Boilerplate
 
  [![License](https://img.shields.io/github/license/emilianox/shiny-typescript-boilerplate.svg)]()
+ ![GitHub top language](https://img.shields.io/github/languages/top/emilianox/shiny-typescript-boilerplate) 
+ ![David](https://img.shields.io/david/emilianox/shiny-typescript-boilerplate)
+
 
 #### My own strong opinionated react/typescript boilerplate with blackjack and hookers. In fact, forget the boilerplate.
 
@@ -80,6 +83,12 @@ git clone https://github.com/emilianox/shiny-typescript-boilerplate
 npm install
 ```
 
+## Starting the development server
+
+```shell
+npm start
+```
+
 ## Screenshots
 > Main Page
  
@@ -89,11 +98,7 @@ npm install
 
  <img src="./readme/analize.png">
 
-## Starting the development server
 
-```shell
-npm start
-```
 
 ## NPM Tasks
 
