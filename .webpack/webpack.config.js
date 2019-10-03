@@ -7,6 +7,8 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
+const Critters = require('critters-webpack-plugin');
+
 const path = require('path');
 const SRC_PATH = path.resolve(__dirname, '../src');
 const DIST_PATH = path.resolve(__dirname, '../dist');
@@ -113,6 +115,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({ inject: true, template: path.join(SRC_PATH, 'index.html') }),
+    new Critters({}),
     new FixStyleOnlyEntriesPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin({

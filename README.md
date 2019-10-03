@@ -60,7 +60,8 @@ Webpack Extended support with:
 - [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin)
 - [ webpack-ant-icon-loader](https://github.com/Beven91/webpack-ant-icon-loader)
-- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) 
+- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+- [critters-webpack-plugin](https://github.com/GoogleChromeLabs/critters) 
 
 
 
