@@ -1,7 +1,7 @@
 
 # Shiny Typescript Boilerplate
 
- [![License](https://img.shields.io/github/license/emilianox/base-ts.svg)]()
+ [![License](https://img.shields.io/github/license/emilianox/shiny-typescript-boilerplate.svg)]()
 
 #### My own strong opinionated react/typescript boilerplate with blackjack and hookers. In fact, forget the boilerplate.
 
@@ -21,7 +21,7 @@ Key Techs
  - <img src="./readme/storybook.png"> [Storybook](https://storybook.js.org/)
  - <img src="./readme/sass.png"> [Sass](https://sass-lang.com/)
  
- Another libraries installed
+ Other libraries installed
 > 
 - [Reach Router](https://reach.tech/router)
 - [Day.js](https://github.com/iamkun/dayjs)
@@ -76,13 +76,18 @@ Webpack Extended support with:
 Install it:
 
 ```sh
-git clone XXXXX
+git clone https://github.com/emilianox/shiny-typescript-boilerplate
 npm install
 ```
 
 ## Screenshots
-XXX
+> Main Page
+ 
+ <img src="./readme/screen.png">
 
+> Analize Page
+
+ <img src="./readme/analize.png">
 
 ## Starting the development server
 
@@ -112,7 +117,7 @@ https://anapioficeandfire.com/
 [@emilianox](https://github.com/emilianox).
 
 ### Contributing
-Feel free to dive in! [Open an issue](https://github.com/emilianox/XXX/issues/new)  or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/emilianox/shiny-typescript-boilerplate/issues/new)  or submit PRs.
 
 #### This is a heavy edited fork of:
 https://github.com/a-tarasyuk/react-webpack-typescript-babel

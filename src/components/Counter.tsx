@@ -18,11 +18,14 @@ export const CounterStateContainer = createContainer(useCounter);
 export const Counter: React.FunctionComponent<RouteComponentProps> = () => {
   const counter = CounterStateContainer.useContainer();
   return (
-    <div>
-      <button onClick={counter.decrement}>-</button>
-      <span>{counter.count}</span>
-      <button onClick={counter.increment}>+</button>
-    </div>
+    <>
+      <h4>Counter:</h4>
+      <div>
+        <button onClick={counter.decrement}>-</button>
+        <span>{counter.count}</span>
+        <button onClick={counter.increment}>+</button>
+      </div>
+    </>
   );
 };
 

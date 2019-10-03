@@ -30,7 +30,7 @@ export class AppLayout extends React.Component {
         title={
           <span>
             <Icon type="book" />
-            <span>Pages</span>
+            <span>Libraries</span>
           </span>
 
         }
@@ -39,16 +39,21 @@ export class AppLayout extends React.Component {
           <Link to="/">Home</Link>
         </Menu.Item>
         <Menu.Item key="4">
-          <Link to="preview">Preview</Link>
+          <Link to="preview">Antd Widgets</Link>
         </Menu.Item>
         <Menu.Item key="5">
           <Link to="form">Formik</Link>
         </Menu.Item>
+        <Menu.Item key="lodash">
+          <Link to="lodash">Lodash</Link>
+        </Menu.Item>
+        <Menu.Item key="momentjs">
+          <Link to="momentjs">Moment Js</Link>
+        </Menu.Item>
+        <Menu.Item key="dayjs">
+          <Link to="dayjs">Day Js</Link>
+        </Menu.Item>
       </SubMenu>
-      <Menu.Item key="9">
-        <Icon type="file" />
-        <span>File</span>
-      </Menu.Item>
       <Menu.Item key="10">
         <Icon type="file" />
         <span><Link to="got">Got</Link> </span>
