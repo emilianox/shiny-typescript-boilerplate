@@ -62,6 +62,7 @@ Webpack Extended support with:
 - [ webpack-ant-icon-loader](https://github.com/Beven91/webpack-ant-icon-loader)
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 - [critters-webpack-plugin](https://github.com/GoogleChromeLabs/critters) 
+- [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin) 
 
 
 
@@ -99,6 +100,9 @@ npm start
 
  <img src="./readme/analize.png">
 
+> Audits in chrome
+
+ <img src="./readme/audits.png">
 
 
 ## NPM Tasks

@@ -8,9 +8,9 @@ import Form from './Form';
 import { ChractersList } from './got';
 import { Hello } from './Hello';
 import { AppLayout } from './Layout';
+import Dayjs from './Libraries/Dayjs';
 import Lodash from './Libraries/Lodash';
 import Momentjs from './Libraries/Momentjs';
-import Dayjs from './Libraries/Dayjs';
 
 function createLazyRoute<T extends RouteComponentProps>(
   RouteComponent: React.ComponentType<T>,

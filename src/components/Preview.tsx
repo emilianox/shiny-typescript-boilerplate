@@ -79,7 +79,7 @@ export class Preview extends React.Component<IPreviewProps & RouteComponentProps
       >
         <List.Item.Meta
           avatar={
-            <Avatar src={BiazfanxmamNRoxxVxkaPng} />
+            <Avatar src={BiazfanxmamNRoxxVxkaPng} alt="face" />
           }
           title={<a href="https://ant.design/index-cn">{item.name}</a>}
           description="Progresser AFX"

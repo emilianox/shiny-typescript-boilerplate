@@ -55,8 +55,11 @@ export class AppLayout extends React.Component {
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="10">
-        <Icon type="file" />
-        <span><Link to="got">Got</Link> </span>
+
+        <Link to="got">
+          <Icon type="file" />
+          Got
+        </Link>
       </Menu.Item>
     </Menu>
 
