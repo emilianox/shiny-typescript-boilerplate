@@ -6,13 +6,10 @@ import { Preview } from '../src/components/Preview';
 
 import { action } from '@storybook/addon-actions';
 import { object, text, withKnobs } from '@storybook/addon-knobs';
-import withPropsCombinations from 'react-storybook-addon-props-combinations'
-
+import reactStorybookAddonPropsCombinations from 'react-storybook-addon-props-combinations';
 
 const stories = storiesOf('Components', module);
 stories.addDecorator(withKnobs);
-
-
 
 stories.add(
   'Hello Component',
@@ -20,7 +17,7 @@ stories.add(
 );
 
 stories.add(
-  'Hello Component Conbinations', withPropsCombinations(
+  'Hello Component Conbinations', reactStorybookAddonPropsCombinations(
     Hello,
     {
       name: ['Hello!', 'Bye!'],

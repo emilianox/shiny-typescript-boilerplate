@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const Critters = require('critters-webpack-plugin');
 
@@ -13,7 +12,29 @@ const path = require('path');
 const SRC_PATH = path.resolve(__dirname, '../src');
 const DIST_PATH = path.resolve(__dirname, '../dist');
 
-module.exports = (env, argv) => {
+// ----------------------------------
+
+
+class CleanUpStatsFromCssCompilePlugin {
+  shouldPickStatChild(child) {
+    return child.name.indexOf('mini-css-extract-plugin') !== 0;
+  }
+
+  apply(compiler) {
+    compiler.hooks.done.tap('CleanUpStatsPlugin', (stats) => {
+      const children = stats.compilation.children;
+      if (Array.isArray(children)) {
+        // eslint-disable-next-line no-param-reassign
+        stats.compilation.children = children
+          .filter(child => this.shouldPickStatChild(child));
+      }
+    });
+  }
+}
+
+// ----------------------------------
+
+const webpackConfig = (env, argv) => {
   const isDevMode = argv.mode === 'development';
   console.log('isDevMode: ', isDevMode);
 
@@ -31,6 +52,7 @@ module.exports = (env, argv) => {
       }), new OptimizeCSSAssetsPlugin({})],
       runtimeChunk: 'single',
       moduleIds: 'hashed',
+      removeEmptyChunks: true,
       splitChunks: {
         cacheGroups: {
           vendor: {
@@ -124,13 +146,16 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({ inject: true, template: path.join(SRC_PATH, 'index.html') }),
+      new HtmlWebpackPlugin({
+        inject: true,
+        template: path.join(SRC_PATH, 'index.html'),
+      }),
       new PreloadWebpackPlugin({
         rel: 'prefetch'
       }),
       new Critters({}),
-      new FixStyleOnlyEntriesPlugin(),
       new ForkTsCheckerWebpackPlugin(),
+      new CleanUpStatsFromCssCompilePlugin(),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
@@ -149,5 +174,7 @@ module.exports = (env, argv) => {
       // )
 
     ]
-  }
+  };
 };
+
+module.exports = webpackConfig;

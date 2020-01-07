@@ -1,10 +1,12 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.config.js');
+const fnCommon = require('./webpack.config.js');
 
 
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const common = fnCommon(null, {})
 
 const webpackConfig = merge.smart(common, {
   devtool: '#@source-map',
